@@ -1,0 +1,12 @@
+com\example\test\entity\Client$ClientBuilder.class
+com\example\test\service\UserService.class
+com\example\test\DTO\Request\UserRequest.class
+com\example\test\DTO\Request\UserUpdateRequest.class
+com\example\test\DTO\Request\UserUpdateRequest$UserUpdateRequestBuilder.class
+com\example\test\TestApplication.class
+com\example\test\repository\UserRepository.class
+com\example\test\DTO\Response\UserResponse$UserResponseBuilder.class
+com\example\test\controller\controller.class
+com\example\test\entity\Client.class
+com\example\test\DTO\Request\UserRequest$UserRequestBuilder.class
+com\example\test\DTO\Response\UserResponse.class

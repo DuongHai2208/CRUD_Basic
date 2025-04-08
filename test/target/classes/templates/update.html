@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CRUD Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body><nav class="navbar navbar-dark bg-dark">
+    <a href="/demo/crud" class="navbar-brand">CRUD WEB</a>
+
+    <form th:action="@{/crud/search}" th:method="get" class="form-inline">
+        <div class="input-group">
+            <input type="text" class="form-control mr-sm-2" name="keyword" placeholder="Nhập uesr cần tìm"/>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Tìm kiếm</button>
+            </div>
+        </div>
+    </form>
+</nav>
+<div class="container mt-4">
+
+    <div th:if="${user != null}">
+        <h2>Cập nhật người dùng</h2>
+        <form th:action="@{/crud/update}" th:method="post" th:object="${user}">
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group">
+                <label for="updateName">Tên:</label>
+                <input type="text" class="form-control" id="updateName" th:field="*{name}" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="updateDob">Ngày sinh:</label>
+                <input type="date" class="form-control" id="updateDob" th:field="*{dob}" required/>
+            </div>
+            <div class="form-group">
+                <label for="updateName">Địa chỉ:</label>
+                <input type="text" class="form-control" id="updateLocal" th:field="*{local}" required/>
+            </div>
+            <div class="form-group">
+                <label for="updateSex">Giới tính:</label>
+                <select class="form-control" id="updateSex" th:field="*{sex}">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Cập nhật</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
